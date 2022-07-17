@@ -16,12 +16,15 @@ f = open('set.txt','r')
 set_game = f.read()
 f.close()
 
+phone = ''      # Information is hidden for privacy purposes
+password = ''   # Information is hidden for privacy purposes
+
 driver = webdriver.Firefox()
 driver.get('https://www.fonbet.ru/#!/live/tennis')
 time.sleep(7)
 driver.find_element_by_xpath('//*[@id="headerContainer"]/div/header/div[2]/div[4]/div/a').click()
-driver.find_element_by_xpath('//*[@id="auth_form"]/div/div/div[2]/form/div[1]/input').send_keys('')
-driver.find_element_by_xpath('//*[@id="auth_form"]/div/div/div[2]/form/div[2]/input').send_keys('')
+driver.find_element_by_xpath('//*[@id="auth_form"]/div/div/div[2]/form/div[1]/input').send_keys(phone)
+driver.find_element_by_xpath('//*[@id="auth_form"]/div/div/div[2]/form/div[2]/input').send_keys(password)
 driver.find_element_by_xpath('//*[@id="auth_form"]/div/div/div[2]/form/div[3]/div[2]/button/div/span').click()
 time.sleep(2)
 driver.find_element_by_xpath('/html/body/div[1]/div/header/div[2]/div[3]/span/a/i').click()
